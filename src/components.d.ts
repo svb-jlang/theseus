@@ -20,6 +20,9 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface TextField {
+        "placeholder": string;
+    }
     interface TheseusButton {
     }
 }
@@ -30,6 +33,12 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLTextFieldElement extends Components.TextField, HTMLStencilElement {
+    }
+    var HTMLTextFieldElement: {
+        prototype: HTMLTextFieldElement;
+        new (): HTMLTextFieldElement;
+    };
     interface HTMLTheseusButtonElement extends Components.TheseusButton, HTMLStencilElement {
     }
     var HTMLTheseusButtonElement: {
@@ -38,6 +47,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "text-field": HTMLTextFieldElement;
         "theseus-button": HTMLTheseusButtonElement;
     }
 }
@@ -56,10 +66,14 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface TextField {
+        "placeholder"?: string;
+    }
     interface TheseusButton {
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "text-field": TextField;
         "theseus-button": TheseusButton;
     }
 }
@@ -68,6 +82,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "text-field": LocalJSX.TextField & JSXBase.HTMLAttributes<HTMLTextFieldElement>;
             "theseus-button": LocalJSX.TheseusButton & JSXBase.HTMLAttributes<HTMLTheseusButtonElement>;
         }
     }

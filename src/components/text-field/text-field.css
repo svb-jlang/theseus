@@ -1,0 +1,22 @@
+input {
+  display: flex;
+  padding: var(--space-2x, 8px) var(--space-3x, 12px);
+  align-items: center;
+  gap: var(--space-1x, 4px);
+  align-self: stretch;
+  border-radius: var(--radius-medium, 4px);
+  border: 1px solid var(--border-neutral-strong, #9e9e9e);
+  border: 1px solid var(--border-neutral-strong, color(display-p3 0.6196 0.6196 0.6196));
+  background: var(--background-container, #fff);
+  background: var(--background-container, color(display-p3 1 1 1));
+  flex: 1 0 0;
+  color: var(--text-neutral-strong, #757575);
+  color: var(--text-neutral-strong, color(display-p3 0.4588 0.4588 0.4588));
+
+  /* body/body-2 */
+  font-family: var(--styles-body-2-regular-family, Roboto, sans-serif);
+  font-size: var(--styles-body-2-regular-size, 14px);
+  font-style: normal;
+  font-weight: var(--styles-body-2-regular-weight, 400);
+  line-height: var(--styles-body-2-regular-line-height, 20px); /* 142.857% */
+}
