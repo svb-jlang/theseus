@@ -1,0 +1,21 @@
+:host {
+  display: inline-flex;
+  min-width: 72px;
+  padding: var(--space-2x, 8px) var(--space-3x, 12px);
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--radius-medium, 4px);
+  background: var(--background-primary, #0081c2);
+  background: var(--background-primary, color(display-p3 0 0.4902 0.7216));
+  color: var(--text-white, #fff);
+  color: var(--text-white, color(display-p3 1 1 1));
+  text-align: center;
+
+  /* body/body-2-medium */
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+}
