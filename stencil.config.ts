@@ -1,4 +1,5 @@
 import { Config } from '@stencil/core';
+import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'theseus',
@@ -20,7 +21,8 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
   ],
+  plugins: [sass()],
   testing: {
-    browserHeadless: "new",
+    browserHeadless: 'new',
   },
 };
