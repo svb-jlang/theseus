@@ -9,19 +9,7 @@ export namespace Components {
     interface ContextualBanner {
         "bannertitle"?: string;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface DropDown {
     }
     interface TextField {
         "placeholder": string;
@@ -36,11 +24,11 @@ declare global {
         prototype: HTMLContextualBannerElement;
         new (): HTMLContextualBannerElement;
     };
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLDropDownElement extends Components.DropDown, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLDropDownElement: {
+        prototype: HTMLDropDownElement;
+        new (): HTMLDropDownElement;
     };
     interface HTMLTextFieldElement extends Components.TextField, HTMLStencilElement {
     }
@@ -56,7 +44,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "contextual-banner": HTMLContextualBannerElement;
-        "my-component": HTMLMyComponentElement;
+        "drop-down": HTMLDropDownElement;
         "text-field": HTMLTextFieldElement;
         "theseus-button": HTMLTheseusButtonElement;
     }
@@ -65,19 +53,7 @@ declare namespace LocalJSX {
     interface ContextualBanner {
         "bannertitle"?: string;
     }
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface DropDown {
     }
     interface TextField {
         "placeholder"?: string;
@@ -86,7 +62,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "contextual-banner": ContextualBanner;
-        "my-component": MyComponent;
+        "drop-down": DropDown;
         "text-field": TextField;
         "theseus-button": TheseusButton;
     }
@@ -96,7 +72,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "contextual-banner": LocalJSX.ContextualBanner & JSXBase.HTMLAttributes<HTMLContextualBannerElement>;
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "drop-down": LocalJSX.DropDown & JSXBase.HTMLAttributes<HTMLDropDownElement>;
             "text-field": LocalJSX.TextField & JSXBase.HTMLAttributes<HTMLTextFieldElement>;
             "theseus-button": LocalJSX.TheseusButton & JSXBase.HTMLAttributes<HTMLTheseusButtonElement>;
         }
