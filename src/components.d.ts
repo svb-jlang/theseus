@@ -6,6 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface ContextualBanner {
+        "bannertitle"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -27,6 +30,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLContextualBannerElement extends Components.ContextualBanner, HTMLStencilElement {
+    }
+    var HTMLContextualBannerElement: {
+        prototype: HTMLContextualBannerElement;
+        new (): HTMLContextualBannerElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -46,12 +55,16 @@ declare global {
         new (): HTMLTheseusButtonElement;
     };
     interface HTMLElementTagNameMap {
+        "contextual-banner": HTMLContextualBannerElement;
         "my-component": HTMLMyComponentElement;
         "text-field": HTMLTextFieldElement;
         "theseus-button": HTMLTheseusButtonElement;
     }
 }
 declare namespace LocalJSX {
+    interface ContextualBanner {
+        "bannertitle"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -72,6 +85,7 @@ declare namespace LocalJSX {
     interface TheseusButton {
     }
     interface IntrinsicElements {
+        "contextual-banner": ContextualBanner;
         "my-component": MyComponent;
         "text-field": TextField;
         "theseus-button": TheseusButton;
@@ -81,6 +95,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "contextual-banner": LocalJSX.ContextualBanner & JSXBase.HTMLAttributes<HTMLContextualBannerElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "text-field": LocalJSX.TextField & JSXBase.HTMLAttributes<HTMLTextFieldElement>;
             "theseus-button": LocalJSX.TheseusButton & JSXBase.HTMLAttributes<HTMLTheseusButtonElement>;
