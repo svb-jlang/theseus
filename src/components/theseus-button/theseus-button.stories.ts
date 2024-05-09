@@ -1,5 +1,5 @@
 export default {
-  title: 'Components/TheseusButton',
+  title: 'Components/Button',
 };
 
 const Template = args => `<theseus-button>${args.text}</theseus-button>`;
