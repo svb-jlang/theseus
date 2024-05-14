@@ -1,4 +1,4 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'theseus-button',
@@ -6,13 +6,13 @@ import { Component, Host, h } from '@stencil/core';
   shadow: true,
 })
 export class TheseusButton {
+  @Prop() variant: string = 'solid';
 
   render() {
     return (
-      <Host>
+      <Host class={`btn-${this.variant}`}>
         <slot></slot>
       </Host>
     );
   }
-
 }

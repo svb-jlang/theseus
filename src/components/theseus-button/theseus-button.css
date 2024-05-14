@@ -7,10 +7,6 @@
   align-items: center;
   gap: 8px;
   border-radius: var(--radius-medium, 4px);
-  background: var(--background-primary, #0081c2);
-  background: var(--background-primary, color(display-p3 0 0.4902 0.7216));
-  color: var(--text-white, #fff);
-  color: var(--text-white, color(display-p3 1 1 1));
   text-align: center;
 
   /* body/body-2-medium */
@@ -19,4 +15,28 @@
   font-style: normal;
   font-weight: 500;
   line-height: 20px; /* 142.857% */
+}
+
+:host(.btn-solid) {
+  color: var(--text-white, #fff);
+  color: var(--text-white, color(display-p3 1 1 1));
+  background: var(--background-primary, #0081c2);
+  background: var(--background-primary, color(display-p3 0 0.4902 0.7216));
+}
+
+:host(.btn-outline) {
+  border-radius: 4px;
+  border: 1px solid var(--border-primary, #0081c2);
+  border: 1px solid var(--border-primary, color(display-p3 0 0.4902 0.7216));
+  background: var(--background-container, #fff);
+  background: var(--background-container, color(display-p3 1 1 1));
+  color: var(--text-primary, #0081c2);
+  color: var(--text-primary, color(display-p3 0 0.4902 0.7216));
+}
+
+:host(.btn-ghost) {
+  background: #f2f2f2;
+  background: color(display-p3 0.95 0.95 0.95);
+  color: var(--text-primary, #0081c2);
+  color: var(--text-primary, color(display-p3 0 0.4902 0.7216));
 }

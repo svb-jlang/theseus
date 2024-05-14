@@ -15,6 +15,7 @@ export namespace Components {
         "placeholder": string;
     }
     interface TheseusButton {
+        "variant": string;
     }
 }
 declare global {
@@ -59,6 +60,7 @@ declare namespace LocalJSX {
         "placeholder"?: string;
     }
     interface TheseusButton {
+        "variant"?: string;
     }
     interface IntrinsicElements {
         "contextual-banner": ContextualBanner;
