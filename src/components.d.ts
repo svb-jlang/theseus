@@ -17,6 +17,9 @@ export namespace Components {
     interface TheseusButton {
         "variant": string;
     }
+    interface TheseusIcon {
+        "variant": string;
+    }
 }
 declare global {
     interface HTMLContextualBannerElement extends Components.ContextualBanner, HTMLStencilElement {
@@ -43,11 +46,18 @@ declare global {
         prototype: HTMLTheseusButtonElement;
         new (): HTMLTheseusButtonElement;
     };
+    interface HTMLTheseusIconElement extends Components.TheseusIcon, HTMLStencilElement {
+    }
+    var HTMLTheseusIconElement: {
+        prototype: HTMLTheseusIconElement;
+        new (): HTMLTheseusIconElement;
+    };
     interface HTMLElementTagNameMap {
         "contextual-banner": HTMLContextualBannerElement;
         "drop-down": HTMLDropDownElement;
         "text-field": HTMLTextFieldElement;
         "theseus-button": HTMLTheseusButtonElement;
+        "theseus-icon": HTMLTheseusIconElement;
     }
 }
 declare namespace LocalJSX {
@@ -62,11 +72,15 @@ declare namespace LocalJSX {
     interface TheseusButton {
         "variant"?: string;
     }
+    interface TheseusIcon {
+        "variant"?: string;
+    }
     interface IntrinsicElements {
         "contextual-banner": ContextualBanner;
         "drop-down": DropDown;
         "text-field": TextField;
         "theseus-button": TheseusButton;
+        "theseus-icon": TheseusIcon;
     }
 }
 export { LocalJSX as JSX };
@@ -77,6 +91,7 @@ declare module "@stencil/core" {
             "drop-down": LocalJSX.DropDown & JSXBase.HTMLAttributes<HTMLDropDownElement>;
             "text-field": LocalJSX.TextField & JSXBase.HTMLAttributes<HTMLTextFieldElement>;
             "theseus-button": LocalJSX.TheseusButton & JSXBase.HTMLAttributes<HTMLTheseusButtonElement>;
+            "theseus-icon": LocalJSX.TheseusIcon & JSXBase.HTMLAttributes<HTMLTheseusIconElement>;
         }
     }
 }

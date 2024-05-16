@@ -2,40 +2,14 @@ export default {
   title: 'Design System/Atoms/Button',
 };
 
-const Template = args => `<theseus-button variant=${args.variant}>${args.text}</theseus-button>`;
+const Template = () => `
+<p><theseus-button variant='solid'>button - solid</theseus-button></p>
+<p><theseus-button variant='outline'>button - outline</theseus-button></p>
+<p><theseus-button variant='ghost'>button - ghost</theseus-button></p>
+<p><theseus-button variant='solid'><theseus-icon variant="download"></theseus-icon></theseus-button></p>
+<p><theseus-button variant='outline'><theseus-icon variant="download-outline"></theseus-icon></theseus-button></p>
+<p><theseus-button variant='ghost'><theseus-icon variant="download-outline"></theseus-icon></theseus-button></p>
+`;
 
-export const Solid = Template.bind({});
-Solid.args = {
-  text: 'Button',
-  variant: 'solid',
-};
-
-export const Outline = Template.bind({});
-Outline.args = {
-  text: 'Button',
-  variant: 'outline',
-};
-
-export const Ghost = Template.bind({});
-Ghost.args = {
-  text: 'Button',
-  variant: 'ghost',
-};
-
-export const SolidIcon = Template.bind({});
-SolidIcon.args = {
-  text: 'Button',
-  variant: 'solid',
-};
-
-export const OutlineIcon = Template.bind({});
-OutlineIcon.args = {
-  text: 'Button',
-  variant: 'outline',
-};
-
-export const GhostIcon = Template.bind({});
-GhostIcon.args = {
-  text: 'Button',
-  variant: 'ghost',
-};
+export const Example = Template.bind({});
+Example.args = {};
