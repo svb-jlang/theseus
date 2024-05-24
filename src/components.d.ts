@@ -11,11 +11,16 @@ export namespace Components {
     }
     interface DropDown {
     }
+    interface InputField {
+        "placeholder": string;
+    }
     interface TextField {
         "placeholder": string;
     }
     interface TheseusButton {
         "variant": string;
+    }
+    interface TheseusCheckbox {
     }
     interface TheseusIcon {
         "variant": string;
@@ -34,6 +39,12 @@ declare global {
         prototype: HTMLDropDownElement;
         new (): HTMLDropDownElement;
     };
+    interface HTMLInputFieldElement extends Components.InputField, HTMLStencilElement {
+    }
+    var HTMLInputFieldElement: {
+        prototype: HTMLInputFieldElement;
+        new (): HTMLInputFieldElement;
+    };
     interface HTMLTextFieldElement extends Components.TextField, HTMLStencilElement {
     }
     var HTMLTextFieldElement: {
@@ -46,6 +57,12 @@ declare global {
         prototype: HTMLTheseusButtonElement;
         new (): HTMLTheseusButtonElement;
     };
+    interface HTMLTheseusCheckboxElement extends Components.TheseusCheckbox, HTMLStencilElement {
+    }
+    var HTMLTheseusCheckboxElement: {
+        prototype: HTMLTheseusCheckboxElement;
+        new (): HTMLTheseusCheckboxElement;
+    };
     interface HTMLTheseusIconElement extends Components.TheseusIcon, HTMLStencilElement {
     }
     var HTMLTheseusIconElement: {
@@ -55,8 +72,10 @@ declare global {
     interface HTMLElementTagNameMap {
         "contextual-banner": HTMLContextualBannerElement;
         "drop-down": HTMLDropDownElement;
+        "input-field": HTMLInputFieldElement;
         "text-field": HTMLTextFieldElement;
         "theseus-button": HTMLTheseusButtonElement;
+        "theseus-checkbox": HTMLTheseusCheckboxElement;
         "theseus-icon": HTMLTheseusIconElement;
     }
 }
@@ -66,11 +85,16 @@ declare namespace LocalJSX {
     }
     interface DropDown {
     }
+    interface InputField {
+        "placeholder"?: string;
+    }
     interface TextField {
         "placeholder"?: string;
     }
     interface TheseusButton {
         "variant"?: string;
+    }
+    interface TheseusCheckbox {
     }
     interface TheseusIcon {
         "variant"?: string;
@@ -78,8 +102,10 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "contextual-banner": ContextualBanner;
         "drop-down": DropDown;
+        "input-field": InputField;
         "text-field": TextField;
         "theseus-button": TheseusButton;
+        "theseus-checkbox": TheseusCheckbox;
         "theseus-icon": TheseusIcon;
     }
 }
@@ -89,8 +115,10 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "contextual-banner": LocalJSX.ContextualBanner & JSXBase.HTMLAttributes<HTMLContextualBannerElement>;
             "drop-down": LocalJSX.DropDown & JSXBase.HTMLAttributes<HTMLDropDownElement>;
+            "input-field": LocalJSX.InputField & JSXBase.HTMLAttributes<HTMLInputFieldElement>;
             "text-field": LocalJSX.TextField & JSXBase.HTMLAttributes<HTMLTextFieldElement>;
             "theseus-button": LocalJSX.TheseusButton & JSXBase.HTMLAttributes<HTMLTheseusButtonElement>;
+            "theseus-checkbox": LocalJSX.TheseusCheckbox & JSXBase.HTMLAttributes<HTMLTheseusCheckboxElement>;
             "theseus-icon": LocalJSX.TheseusIcon & JSXBase.HTMLAttributes<HTMLTheseusIconElement>;
         }
     }
