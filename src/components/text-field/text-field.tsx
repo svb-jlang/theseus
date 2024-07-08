@@ -6,13 +6,14 @@ import { Component, Prop, h } from '@stencil/core';
   shadow: true,
 })
 export class TextField {
-
   @Prop() placeholder: string;
 
   render() {
     return (
-      <input placeholder={this.placeholder} type="text"></input>
+      <div class="text-field-container">
+        <slot name="icon"></slot>
+        <input placeholder={this.placeholder} type="text" />
+      </div>
     );
   }
-
 }

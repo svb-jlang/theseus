@@ -20,3 +20,25 @@ input {
   font-weight: var(--styles-body-2-regular-weight, 400);
   line-height: var(--styles-body-2-regular-line-height, 20px); /* 142.857% */
 }
+
+.text-field-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.text-field-container ::slotted([slot='icon']) {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.text-field-container input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 5px;
+  font-size: 1em;
+}

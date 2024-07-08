@@ -6,10 +6,16 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface ActionBar {
+    }
     interface ContextualBanner {
         "bannertitle"?: string;
     }
     interface DropDown {
+    }
+    interface IconButton {
+        "icon": string;
+        "text": string;
     }
     interface InputField {
         "placeholder": string;
@@ -27,6 +33,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLActionBarElement extends Components.ActionBar, HTMLStencilElement {
+    }
+    var HTMLActionBarElement: {
+        prototype: HTMLActionBarElement;
+        new (): HTMLActionBarElement;
+    };
     interface HTMLContextualBannerElement extends Components.ContextualBanner, HTMLStencilElement {
     }
     var HTMLContextualBannerElement: {
@@ -38,6 +50,12 @@ declare global {
     var HTMLDropDownElement: {
         prototype: HTMLDropDownElement;
         new (): HTMLDropDownElement;
+    };
+    interface HTMLIconButtonElement extends Components.IconButton, HTMLStencilElement {
+    }
+    var HTMLIconButtonElement: {
+        prototype: HTMLIconButtonElement;
+        new (): HTMLIconButtonElement;
     };
     interface HTMLInputFieldElement extends Components.InputField, HTMLStencilElement {
     }
@@ -70,8 +88,10 @@ declare global {
         new (): HTMLTheseusIconElement;
     };
     interface HTMLElementTagNameMap {
+        "action-bar": HTMLActionBarElement;
         "contextual-banner": HTMLContextualBannerElement;
         "drop-down": HTMLDropDownElement;
+        "icon-button": HTMLIconButtonElement;
         "input-field": HTMLInputFieldElement;
         "text-field": HTMLTextFieldElement;
         "theseus-button": HTMLTheseusButtonElement;
@@ -80,10 +100,16 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface ActionBar {
+    }
     interface ContextualBanner {
         "bannertitle"?: string;
     }
     interface DropDown {
+    }
+    interface IconButton {
+        "icon"?: string;
+        "text"?: string;
     }
     interface InputField {
         "placeholder"?: string;
@@ -100,8 +126,10 @@ declare namespace LocalJSX {
         "variant"?: string;
     }
     interface IntrinsicElements {
+        "action-bar": ActionBar;
         "contextual-banner": ContextualBanner;
         "drop-down": DropDown;
+        "icon-button": IconButton;
         "input-field": InputField;
         "text-field": TextField;
         "theseus-button": TheseusButton;
@@ -113,8 +141,10 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "action-bar": LocalJSX.ActionBar & JSXBase.HTMLAttributes<HTMLActionBarElement>;
             "contextual-banner": LocalJSX.ContextualBanner & JSXBase.HTMLAttributes<HTMLContextualBannerElement>;
             "drop-down": LocalJSX.DropDown & JSXBase.HTMLAttributes<HTMLDropDownElement>;
+            "icon-button": LocalJSX.IconButton & JSXBase.HTMLAttributes<HTMLIconButtonElement>;
             "input-field": LocalJSX.InputField & JSXBase.HTMLAttributes<HTMLInputFieldElement>;
             "text-field": LocalJSX.TextField & JSXBase.HTMLAttributes<HTMLTextFieldElement>;
             "theseus-button": LocalJSX.TheseusButton & JSXBase.HTMLAttributes<HTMLTheseusButtonElement>;
