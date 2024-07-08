@@ -11,3 +11,7 @@
   display: flex;
   align-items: center;
 }
+
+.dropdown-container {
+  margin-right: 10px;
+}

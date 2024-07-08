@@ -13,6 +13,8 @@ export namespace Components {
     }
     interface DropDown {
     }
+    interface DropdownMenu {
+    }
     interface IconButton {
         "icon": string;
         "text": string;
@@ -50,6 +52,12 @@ declare global {
     var HTMLDropDownElement: {
         prototype: HTMLDropDownElement;
         new (): HTMLDropDownElement;
+    };
+    interface HTMLDropdownMenuElement extends Components.DropdownMenu, HTMLStencilElement {
+    }
+    var HTMLDropdownMenuElement: {
+        prototype: HTMLDropdownMenuElement;
+        new (): HTMLDropdownMenuElement;
     };
     interface HTMLIconButtonElement extends Components.IconButton, HTMLStencilElement {
     }
@@ -91,6 +99,7 @@ declare global {
         "action-bar": HTMLActionBarElement;
         "contextual-banner": HTMLContextualBannerElement;
         "drop-down": HTMLDropDownElement;
+        "dropdown-menu": HTMLDropdownMenuElement;
         "icon-button": HTMLIconButtonElement;
         "input-field": HTMLInputFieldElement;
         "text-field": HTMLTextFieldElement;
@@ -106,6 +115,8 @@ declare namespace LocalJSX {
         "bannertitle"?: string;
     }
     interface DropDown {
+    }
+    interface DropdownMenu {
     }
     interface IconButton {
         "icon"?: string;
@@ -129,6 +140,7 @@ declare namespace LocalJSX {
         "action-bar": ActionBar;
         "contextual-banner": ContextualBanner;
         "drop-down": DropDown;
+        "dropdown-menu": DropdownMenu;
         "icon-button": IconButton;
         "input-field": InputField;
         "text-field": TextField;
@@ -144,6 +156,7 @@ declare module "@stencil/core" {
             "action-bar": LocalJSX.ActionBar & JSXBase.HTMLAttributes<HTMLActionBarElement>;
             "contextual-banner": LocalJSX.ContextualBanner & JSXBase.HTMLAttributes<HTMLContextualBannerElement>;
             "drop-down": LocalJSX.DropDown & JSXBase.HTMLAttributes<HTMLDropDownElement>;
+            "dropdown-menu": LocalJSX.DropdownMenu & JSXBase.HTMLAttributes<HTMLDropdownMenuElement>;
             "icon-button": LocalJSX.IconButton & JSXBase.HTMLAttributes<HTMLIconButtonElement>;
             "input-field": LocalJSX.InputField & JSXBase.HTMLAttributes<HTMLInputFieldElement>;
             "text-field": LocalJSX.TextField & JSXBase.HTMLAttributes<HTMLTextFieldElement>;
