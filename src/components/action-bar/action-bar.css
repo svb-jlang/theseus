@@ -1,11 +1,13 @@
-:host {
-  display: block;
+.action-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 10px;
   background-color: #f8f8f8;
   border-bottom: 1px solid #ccc;
 }
 
-text-field {
-  width: 100%;
-  max-width: 400px;
+.actions {
+  display: flex;
+  align-items: center;
 }
